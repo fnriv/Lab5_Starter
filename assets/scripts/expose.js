@@ -12,10 +12,6 @@ let select = document.querySelector('select');
 let audio = document.querySelector('audio');
 let playButton = document.querySelector('button'); // in the FAQ they tell us to use querySelectorAll for some reason?
 
-// Play the loaded audio when play button clicked
-playButton.addEventListener('click', () => {
-  audio.play();
-});
 
 select.addEventListener('change', () =>{
   if(select.value == "air-horn")
@@ -51,5 +47,23 @@ volume.addEventListener('change', () => {
     volumeImage.src = "assets/icons/volume-level-2.svg";
   } else {
     volumeImage.src = "assets/icons/volume-level-3.svg";
+  }
+});
+
+//Part 3 of Expose
+  // Play the loaded audio when play button clicked
+let playVolume = volume.value / 100;
+const jsConfetti = new JSConfetti();
+
+
+playButton.addEventListener('click', () => {
+
+  audio.volume = playVolume;
+  if (select.value == "party-horn") {
+    jsConfetti.addConfetti();
+    audio.play();
+  }
+  else {
+    audio.play();
   }
 });
