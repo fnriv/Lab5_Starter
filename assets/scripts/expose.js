@@ -39,12 +39,11 @@ select.addEventListener('change', () =>{
 
 
 // Part 2 of Expose
-let mute = document.querySelector('img');
+let mute = document.querySelector('#volume-controls img');
 let volume = document.getElementById('volume');
-let audioSlider = document.querySelector('range');
 
-audioSlider.addEventListener('change', () => {
-  if(audioSlider.value == 0) {
+volume.addEventListener('change', () => {
+  if(volume.value == 0) {
     mute.src = "assets/icons/volume-level-0.svg";
   }
 });
