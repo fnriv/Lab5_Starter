@@ -52,7 +52,7 @@ volume.addEventListener('change', () => {
 
 //Part 3 of Expose
   // Play the loaded audio when play button clicked
-let playVolume = (volume.value) / 100;
+let playVolume = volume.value / 100;
 const jsConfetti = new JSConfetti();
 
 
