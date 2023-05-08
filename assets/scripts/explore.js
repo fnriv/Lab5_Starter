@@ -9,7 +9,7 @@ function init() {
   const inputTxt = document.querySelector('textarea');
   const voiceSelect = document.querySelector("select");
   const press = document.querySelector('button');
-
+  const image = document.querySelector('#explore img');
   let voices = [];
 
   function populateVoiceList() {
@@ -45,8 +45,13 @@ function init() {
     utterThis.pitch = 1;
     utterThis.rate = 1;
     synth.speak(utterThis);
-
+    if(synth.speaking == true) {
+      image.src = "assets/images/smiling-open.png";
+    } else {
+      image.src = "assets/images/smiling.png";
+    }
     inputTxt.blur();
   });
+
 
 }
