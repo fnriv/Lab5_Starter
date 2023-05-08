@@ -39,11 +39,17 @@ select.addEventListener('change', () =>{
 
 
 // Part 2 of Expose
-let mute = document.querySelector('#volume-controls img');
+let volumeImage = document.querySelector('#volume-controls img');
 let volume = document.getElementById('volume');
 
 volume.addEventListener('change', () => {
   if(volume.value == 0) {
-    mute.src = "assets/icons/volume-level-0.svg";
+    volumeImage.src = "assets/icons/volume-level-0.svg";
+  } else if(volume.value >= 1 && volume.value < 33) {
+    volumeImage.src = "assets/icons/volume-level-1.svg";
+  } else if(volume.value >= 33 && volume.value < 67) {
+    volumeImage.src = "assets/icons/volume-level-2.svg";
+  } else {
+    volumeImage.src = "assets/icons/volume-level-3.svg";
   }
 });
