@@ -48,17 +48,17 @@ volume.addEventListener('change', () => {
   } else {
     volumeImage.src = "assets/icons/volume-level-3.svg";
   }
+  audio.volume = volume.value / 100;
 });
 
 //Part 3 of Expose
   // Play the loaded audio when play button clicked
-let playVolume = volume.value / 100;
+//let playVolume = volume.value / 100;
 const jsConfetti = new JSConfetti();
 
 
 playButton.addEventListener('click', () => {
 
-  audio.volume = playVolume;
   if (select.value == "party-horn") {
     jsConfetti.addConfetti();
     audio.play();
